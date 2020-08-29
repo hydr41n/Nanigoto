@@ -4,7 +4,7 @@
 
   <section class="hero section container is-fullheight">
 
-    <div class="columns is-gapless  is-vcentered">
+    <div class="columns is-gaples">
         {{-- feed --}}
       <div class="column is-8">
           <div class="mb-0">
@@ -57,8 +57,27 @@
           </div>
         {{-- end feed --}}
       </div>
-      <div class="column has-background-black">
-         <h1 class="title has-text-primary">@guest You are browsing as Guest @else{{ Auth::user()->name }}@endguest</h1>
+      <div class="column">
+         <div class="container">
+
+           <span class="icon is-large">
+              <img src="{{asset('images/favicon.ico')}}" alt="made with bulma" height="22" width="22">
+           </span>
+           <span class="icon is-large">
+            <i class="fab fa-laravel title is-5 has-text-warning-dark" aria-hidden="true"></i>
+           </span>
+           <span class="icon is-large title is-5 has-text-primary">
+              <i class="fab fa-vuejs" aria-hidden="true"></i>
+           </span>
+           <span class="icon is-large">
+              <i class="fas fa-equals" aria-hidden="true"></i>
+           </span>
+           <span class="icon is-large title is-5 has-text-danger-dark">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+           </span>
+           
+           <h1 class="title has-text-primary">@guest You are browsing as Guest @else{{ Auth::user()->name }}@endguest</h1>
+         </div>
       </div>
     </div>
 
