@@ -1,105 +1,100 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nanigoto なにごと</title>
-    <link rel="stylesheet" href="{{mix('css/app.css')}}">
-    <script src="{{mix('js/app.js')}}"></script>
-    <style type="text/css">
-        body,html{
-            height: 100%;
-        }
-    </style>
-  </head>
-  <body class="has-background-black-bis">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <nav class="navbar has-background-black">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <strong class="has-text-grey-lighter">Nanigoto </strong>
-          <strong class="has-text-primary">&nbsp;なにごと</strong>
-        </a>
-        {{-- <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div> --}}
-      </div>
+        <title>Laravel</title>
 
-    {{--   <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-          
-        </div>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            
-          </div>
-        </div>
-      </div> --}}
-    </nav>
-  <section class="section container">
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
 
-    <div class="columns is-gapless  is-vcentered">
-        {{-- feed --}}
-      <div class="column is-8">
-          <div class="mb-0">
-                {{-- <div class="media-left">
-                  <figure class="image is-64x64">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                  </figure>
-                </div> --}}
-                <div class="content">
-                  <div class="content mb-3">
-                    <p class="has-text-grey-lighter">
-                        <strong class="title is-5 has-text-primary">How to Use Axios?</strong>
-                        <small class="title is-6 has-text-grey">@johnsmith <i>31m</i></small>
-                      <br>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa...
-                    </p>
-                  </div>
-                  <nav class="level is-mobile mb-2">
-                    <div class="level-left">
-                        {{-- count --}}
-                      <a class="level-item has-text-grey" aria-label="">
-                        <span class="icon is-small">
-                          <i class="fas fa-eye" aria-hidden="true"></i>
-                        </span>
-                        <strong class="has-text-grey">&nbsp;422</strong>
-                      </a>
-                      <a class="level-item has-text-grey" aria-label="">
-                        <span class="icon is-small">
-                          <i class="fas fa-comment-alt" aria-hidden="true"></i>
-                        </span>
-                        <strong class="has-text-grey">&nbsp;643</strong>
-                      </a>
-                      <a class="level-item has-text-grey" aria-label="">
-                        <span class="icon is-small">
-                          <i class="fas fa-star" aria-hidden="true"></i>
-                        </span>
-                        <strong class="has-text-grey">&nbsp;702</strong>
-                      </a>
-                    </div>
-                  </nav>
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                        {{-- tags --}}
-                      <a class="level-item tags" aria-label="reply">
-                       <span class="tag is-black has-text-primary">#Javascript</span>
-                      </a>
-                    </div>
-                  </nav>
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
                 </div>
-          </div>
-        {{-- end feed --}}
-      </div>
-      <div class="column has-background-black">
-         hello
-      </div>
-    </div>
+            @endif
 
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel
+                </div>
 
-  </section>
-  </body>
+                <div class="links">
+                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://vapor.laravel.com">Vapor</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
