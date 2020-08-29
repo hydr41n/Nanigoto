@@ -1,2 +1,2 @@
 ## NANIGOTO
-<i>A simple forum made with Laravel and Bulma</i>
+<i>A simple forum made with Laravel Vuejs and Bulma</i>
