@@ -57,8 +57,8 @@
             </div>
             <hr>
             <div class="field">
-              <a class="button is-black is-outlined is-fullwidth" href="{{ url('/') }}">
-                {{ __('Continue as Guest') }}
+              <a class="button is-black is-outlined is-fullwidth" href="{{ url('/guest') }}">
+                {{ __('Continue as Guest') }}                
               </a>
             </div>
           </form>

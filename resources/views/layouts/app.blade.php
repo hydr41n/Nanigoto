@@ -17,6 +17,13 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <style type="text/css">   
+        .input:focus{border-color: transparent;} 
+        .input:hover{border-color: transparent} 
+        .input,.textarea{color:white; border-color: transparent}
+    </style>
+
 </head>
 <body class="hero has-background-black-bis is-fullheight">
     <div id="app">
